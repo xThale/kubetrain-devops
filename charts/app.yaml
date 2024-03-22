@@ -28,7 +28,7 @@ spec:
     spec:
       containers:
       - name: kubetrain
-        image: xthale/kubetrain:develop-1711109972
+        image: xthale/kubetrain:develop-1711109972 # {"$imagepolicy": "flux-system:kubetrain"}
         ports:
         - containerPort: 8080
         livenessProbe:
