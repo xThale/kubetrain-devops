@@ -1,11 +1,11 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: kubetest
+  name: kubetrain
   namespace: flux-system
 spec:
   interval: 10s
-  url: https://github.com/xThale/kubetrain-devops
+  url: ssh://git@github.com/xthale/kubetrain-devops 
   secretRef:
     name: flux-system
   ref:
