@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m
-  targetNamespace: default
+  targetNamespace: monitoring 
   sourceRef:
     kind: GitRepository
     name: kubetrain
