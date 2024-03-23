@@ -3,9 +3,17 @@ kind: Kustomization
 resources:
 - kube-prometheus-stack.yaml
 - namespace.yaml
+- secrets.yaml
+  #secretGenerator:
+  # - name: grafana-secrets
+  # files:
+  #   - kube-prometheus-stack-values.yaml=secrets.yaml
+  # options:
+  #   disableNameSuffixHash: true
 configMapGenerator:
   - name: kube-prometheus-values
     files:
       - kube-prometheus-stack-values.yaml
     options:
       disableNameSuffixHash: true
+

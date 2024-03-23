@@ -202,7 +202,7 @@ additionalPrometheusRulesMap: {}
 ##
 global:
   rbac:
-    create: false
+    create: true
 
     ## Create ClusterRoles that extend the existing view, edit and admin ClusterRoles to interact with prometheus-operator CRDs
     ## Ref: https://kubernetes.io/docs/reference/access-authn-authz/rbac/#aggregated-clusterroles
@@ -967,7 +967,7 @@ grafana:
   ##
   defaultDashboardsEditable: true
 
-  adminPassword: prom-operator
+  adminPassword: test1234
 
   rbac:
     ## If true, Grafana PSPs will be created
@@ -1438,7 +1438,7 @@ kubelet:
 ## Component scraping the kube controller manager
 ##
 kubeControllerManager:
-  enabled: true
+  enabled: false
 
   ## If your kube controller manager is not deployed as a pod, specify IPs it can be found on
   ##
@@ -1537,9 +1537,9 @@ kubeControllerManager:
 ## Component scraping coreDns. Use either this or kubeDns
 ##
 coreDns:
-  enabled: true
+  enabled: false 
   service:
-    enabled: true
+    enabled: false
     port: 9153
     targetPort: 9153
     # selector:
@@ -1700,7 +1700,7 @@ kubeDns:
 ## Component scraping etcd
 ##
 kubeEtcd:
-  enabled: true
+  enabled: false
 
   ## If your etcd is not deployed as a pod, specify IPs it can be found on
   ##
@@ -1801,7 +1801,8 @@ kubeEtcd:
 ## Component scraping kube scheduler
 ##
 kubeScheduler:
-  enabled: true
+  enabled: false
+
 
   ## If your kube scheduler is not deployed as a pod, specify IPs it can be found on
   ##
@@ -1899,7 +1900,7 @@ kubeScheduler:
 ## Component scraping kube proxy
 ##
 kubeProxy:
-  enabled: true
+  enabled: false
 
   ## If your kube proxy is not deployed as a pod, specify IPs it can be found on
   ##
@@ -2477,7 +2478,8 @@ prometheusOperator:
 
   ## Namespaces not to scope the interaction of the Prometheus Operator (deny list).
   ##
-  denyNamespaces: []
+  denyNamespaces: 
+    - kube-system
 
   ## Filter namespaces to look for prometheus-operator custom resources
   ##
