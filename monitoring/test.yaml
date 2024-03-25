@@ -3,6 +3,7 @@ kind: Secret
 metadata:
   creationTimestamp: null
   name: my-secret
+  namespace: monitoring
 data:
   password: YmFy
   username: Zm9v
