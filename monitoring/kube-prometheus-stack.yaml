@@ -23,6 +23,6 @@ spec:
       name: kube-prometheus-values
       valuesKey: kube-prometheus-stack-values.yaml
       optional: false
-    - kind: Secret
-      name: grafana-secrets
-      valuesKey: kube-prometheus-stack-values.yaml
+        #- kind: Secret
+        #name: grafana-secrets
+        #valuesKey: kube-prometheus-stack-values.yaml
