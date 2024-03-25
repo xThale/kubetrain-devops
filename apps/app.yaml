@@ -2,13 +2,30 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kubetrain
+  labels:
+    app: kubetrain
 spec:
   selector:
     app: kubetrain
   ports:
-    - protocol: TCP
+    - name: http-web
+      protocol: TCP
       port: 80
       targetPort: 8080
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kubetrain-service-monitor
+spec:
+  selector:
+    matchLabels:
+      app: kubetrain
+  endpoints:
+    - port: http-web 
+      path: /q/metrics
+      interval: 15s
+      scheme: http
 ---
 apiVersion: apps/v1
 kind: Deployment

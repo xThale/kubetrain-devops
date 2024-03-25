@@ -1048,7 +1048,11 @@ grafana:
         etcd:
           enabled: false
       provider:
-        allowUiUpdates: false
+        name: kubetrain
+        type: file
+        folder: kubetrain
+        foldersFromFilesStructure: true
+        allowUiUpdates: true
     datasources:
       enabled: true
       defaultDatasourceEnabled: true
@@ -3480,7 +3484,7 @@ prometheus:
     ## prometheus resource to be created with selectors based on values in the helm deployment,
     ## which will also match the servicemonitors created
     ##
-    serviceMonitorSelectorNilUsesHelmValues: true
+    serviceMonitorSelectorNilUsesHelmValues: false
 
     ## ServiceMonitors to be selected for target discovery.
     ## If {}, select all ServiceMonitors
@@ -3503,7 +3507,7 @@ prometheus:
     ## prometheus resource to be created with selectors based on values in the helm deployment,
     ## which will also match the podmonitors created
     ##
-    podMonitorSelectorNilUsesHelmValues: true
+    podMonitorSelectorNilUsesHelmValues: false
 
     ## PodMonitors to be selected for target discovery.
     ## If {}, select all PodMonitors

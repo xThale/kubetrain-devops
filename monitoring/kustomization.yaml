@@ -4,13 +4,7 @@ resources:
 - kube-prometheus-stack.yaml
 - namespace.yaml
 - secrets.enc.yaml
-
-#secretGenerator:
-# - name: grafana-secrets
-# files:
-#   - kube-prometheus-stack-values.yaml=secrets.yaml
-# options:
-#   disableNameSuffixHash: true
+- dashboards
 
 configMapGenerator:
   - name: kube-prometheus-values
