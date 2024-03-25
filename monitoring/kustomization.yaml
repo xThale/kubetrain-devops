@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - kube-prometheus-stack.yaml
 - namespace.yaml
-- secrets.yaml
 - test-sealed.yaml
 
 #secretGenerator:
