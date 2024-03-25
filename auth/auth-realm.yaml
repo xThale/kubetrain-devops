@@ -1,0 +1,11 @@
+apiVersion: k8s.keycloak.org/v2alpha1
+kind: KeycloakRealmImport
+metadata:
+  name: kubetrain-realm 
+spec:
+  keycloakCRName: keycloak
+  realm:
+    id: kubetrain-realm
+    realm: kubetrain-realm
+    displayName: Kubetrain Realm 
+    enabled: true

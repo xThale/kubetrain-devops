@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- keycloak.yaml
+- namespace.yaml
+
+configMapGenerator:
+  - name: keycloak-values
+    files:
+      - keycloak-values.yaml
+    options:
+      disableNameSuffixHash: true
