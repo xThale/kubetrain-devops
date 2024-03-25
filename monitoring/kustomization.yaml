@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
 - kube-prometheus-stack.yaml
 - namespace.yaml
-- test-sealed.yaml
+- secrets.enc.yaml
 
 #secretGenerator:
 # - name: grafana-secrets
